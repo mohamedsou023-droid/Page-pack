@@ -95,7 +95,15 @@ ul{padding-left:20px;margin:0}li{margin-bottom:8px}
    Tant que la liste est vide, aucune bulle n'apparaît.
    Aperçu de test : ajoute #demo à la fin du lien (exemples fictifs, pour voir l'effet). */
 var VENTES = [
-  // {p:"Prénom", v:"Ville", t:"il y a 12 minutes"},
+  // {p:"Mathias", v:"Cameroun", t:"Achat confirmé sur Chariow"},
+{p:"Daouda", v:"Guinée", t:"Achat confirmé sur Chariow"},
+{p:"Sory", v:"Guinée", t:"Achat confirmé sur Chariow"},
+{p:"Aïssatou", v:"Guinée", t:"Achat confirmé sur Chariow"},
+{p:"Dodzi", v:"", t:"Achat confirmé sur Chariow"},
+{p:"Askya", v:"", t:"Achat confirmé sur Chariow"},
+{p:"Daouda", v:"", t:"Achat confirmé sur Chariow"},
+{p:"Mohamed", v:"", t:"Achat confirmé sur Chariow"},
+{p:"Prénom", v:"Ville", t:"il y a 12 minutes"},
 ];
 var DEMO = [
   {p:"Prénom", v:"Ville", t:"il y a 5 minutes"},
@@ -105,7 +113,8 @@ var list = (location.hash === "#demo") ? DEMO : VENTES;
 var el = document.getElementById("sp"), i = 0;
 function show(){
   var s = list[i % list.length]; i++;
-  el.innerHTML = "🛒 <b>" + s.p + "</b> de " + s.v + " vient d’acheter ce pack<small>" + s.t + "</small>";
+  el.innerHTML = "🛒 <b>" + s.p + "</b>" + (s.v ? " de " + s.v : "") + " vient d’acheter ce pack<small>" + s.t + "</small>";
+el.innerHTML = "🛒 <b>" + s.p + "</b> de " + s.v + " vient d’acheter ce pack<small>" + s.t + "</small>";
   el.classList.add("on");
   setTimeout(function(){ el.classList.remove("on"); }, 5000);
 }
